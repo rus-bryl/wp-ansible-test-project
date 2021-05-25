@@ -11,7 +11,7 @@
 
 - name: Set up wp-config
   template:
-    src: "roles/wordpress_deploy/templates/wp-config.php.j2"
+    src: "wp-config.php.j2"
     dest: "/var/www/html/wordpress/wp-config.php"
   tags: [ wordpress ]
   notify: Reload Nginx
