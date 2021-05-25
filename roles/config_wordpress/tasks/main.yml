@@ -1,0 +1,17 @@
+---
+# tasks file for config_wordpress
+- name: Site config
+  copy:
+    src: "wordpress"
+    dest: "/etc/nginx/sites-available/wordpress"
+
+- name: Site enable
+  shell: "ln -sf /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/wordpress"
+  tags: [ wordpress ]
+
+- name: Set up wp-config
+  template:
+    src: "roles/wordpress_deploy/templates/wp-config.php.j2"
+    dest: "/var/www/html/wordpress/wp-config.php"
+  tags: [ wordpress ]
+  notify: Reload Nginx

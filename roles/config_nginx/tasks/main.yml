@@ -1,0 +1,6 @@
+---
+# tasks file for config_nginx
+- name: Nginx config
+  copy:
+    src: "nginx.conf"
+    dest: "/etc/nginx/nginx.conf"

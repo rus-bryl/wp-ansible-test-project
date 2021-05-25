@@ -1,0 +1,8 @@
+  - name: Deploy Wordpress to AWS Ubuntu Linux
+    hosts: tag_Name_WordPress_Server
+    become: yes
+    remote_user: ubuntu
+    vars_files:
+    - vars/main.yml
+    tasks:
+    - setup:
