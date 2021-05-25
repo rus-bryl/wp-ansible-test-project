@@ -1,8 +1,8 @@
 ---
 # tasks file for config_wordpress
 - name: Site config
-  copy:
-    src: "wordpress"
+  template:
+    src: "wordpress.j2"
     dest: "/etc/nginx/sites-available/wordpress"
 
 - name: Site enable
