@@ -1,34 +1,18 @@
 ---
 # tasks file for install_php
-- name: Install php-fpm
-  apt: name=php-fpm update_cache=yes state=latest
-
-- name: Install php-mysql
-  apt: name=php-mysql update_cache=yes state=latest
-
-- name: Install python3-pymysql
-  apt: name=python3-pymysql update_cache=yes state=latest
-
-- name: Install php-curl
-  apt: name=php-curl update_cache=yes state=latest
-
-- name: Install php-gd
-  apt: name=php-gd update_cache=yes state=latest
-
-- name: Install php-mbstring
-  apt: name=php-mbstring update_cache=yes state=latest
-
-- name: Install php-xml
-  apt: name=php-xml update_cache=yes state=latest
-
-- name: Install php-xmlrpc
-  apt: name=php-xmlrpc update_cache=yes state=latest
-
-- name: Install php-soap
-  apt: name=php-soap update_cache=yes state=latest
-
-- name: Install php-intl
-  apt: name=php-intl update_cache=yes state=latest
-
-- name: Install php-zip
-  apt: name=php-zip update_cache=yes state=latest
+- name: Install php
+  apt: 
+    pkg:
+      - php-mysql
+      - php-fpm
+      - python3-pymysql
+      - php-curl
+      - php-gd
+      - php-mbstring
+      - php-xml
+      - php-xmlrpc
+      - php-soap
+      - php-intl
+      - php-zip
+    update_cache: yes
+    state: latest

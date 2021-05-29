@@ -6,6 +6,6 @@ mysql_user: "wpuser"
 mysql_password: "wppassword"
 
 #HTTP Settings
-http_host: "ec2-3-68-40-106.eu-central-1.compute.amazonaws.com"
+http_host: "ec2-3-68-7-7.eu-central-1.compute.amazonaws.com"
 http_conf: "your_domain.conf"
 http_port: "80"

@@ -4,10 +4,15 @@
   template:
     src: "wordpress.j2"
     dest: "/etc/nginx/sites-available/wordpress"
+  notify: Reload Nginx
 
 - name: Site enable
-  shell: "ln -sf /etc/nginx/sites-available/wordpress /etc/nginx/sites-enabled/wordpress"
+  file:
+    src: "/etc/nginx/sites-available/wordpress"
+    dest: "/etc/nginx/sites-enabled/wordpress"
+    state: link
   tags: [ wordpress ]
+  notify: Reload Nginx
 
 - name: Set up wp-config
   template:
