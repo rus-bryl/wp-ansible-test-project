@@ -18,13 +18,11 @@
   tags: [ wordpress ]
 
 - name: Set permissions for directories
-  shell: "/usr/bin/find /var/www/html/wordpress/ -type d -not -perm 0750 -exec chmod 750 {} \\;"
-  args:
-    creates: "/var/www/html/wordpress"
+  shell: "/usr/bin/find /var/www/html/wordpress/ -type d -not -perm 0750 -print >&1 -exec chmod 750 {} \\;"
+  changed_when: False
   tags: [ wordpress ]
 
 - name: Set permissions for files
-  shell: "/usr/bin/find /var/www/html/wordpress/ -type f -not -perm 0640 -exec chmod 640 {} \\;"
-  args:
-    creates: "/var/www/html/wordpress"
+  shell: "/usr/bin/find /var/www/html/wordpress/ -type f -not -perm 0640 -print >&1 -exec chmod 640 {} \\;"
+  changed_when: False
   tags: [ wordpress ]
