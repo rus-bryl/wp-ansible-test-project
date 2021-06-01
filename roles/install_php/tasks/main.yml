@@ -2,7 +2,7 @@
 # tasks file for install_php
 - name: Install php
   apt: 
-    pkg:
+    name:
       - php-mysql
       - php-fpm
       - python3-pymysql

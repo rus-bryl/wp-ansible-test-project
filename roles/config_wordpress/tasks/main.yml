@@ -19,4 +19,5 @@
     src: "wp-config.php.j2"
     dest: "/var/www/html/wordpress/wp-config.php"
   tags: [ wordpress ]
+#  when: mysql_config_status.changed or nginx_config_status.changed
   notify: Reload Nginx

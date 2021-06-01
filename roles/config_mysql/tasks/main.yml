@@ -42,5 +42,6 @@
     state: present
     login_user: root
     login_password: "{{ mysql_root_password }}"
+  register: mysql_config_status
   tags: [ mysql ]
   

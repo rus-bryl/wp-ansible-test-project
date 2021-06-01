@@ -4,3 +4,5 @@
   copy:
     src: "nginx.conf"
     dest: "/etc/nginx/nginx.conf"
+  register: nginx_config_status
+

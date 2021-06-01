@@ -12,6 +12,8 @@ server {
     # Default file
     index index.php;
 
+    include snippets/well-known;
+
     location / {
         try_files $uri $uri/ /index.php?$args;
     }
